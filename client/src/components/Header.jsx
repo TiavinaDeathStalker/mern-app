@@ -7,11 +7,10 @@ import {FaMoon} from 'react-icons/fa'
 export default function Header() {
     const path = useLocation().pathname; 
   return (
-    <Navbar className='border-b-2'>
-        <Link to="/" className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'  >
-            <span className='px-2 py-1 bg-gradiant-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>Tiavina</span>
-            Blog
-        </Link>
+    <Navbar className='border-b-2' fluid rounded>
+        <Navbar.Brand href="/">
+        <img src="https://varuna-biodiversite.org/wp-content/themes/varuna_theme/img/logo.svg" className="mr-40 h-32 sm:h-32" alt="Varuna Logo" />
+        </Navbar.Brand>
         <form >
             <TextInput 
                 type='text'
