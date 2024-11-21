@@ -43,7 +43,7 @@ export default function Signup() {
         {/* Left Side */}
         <div className='flex-1'>
         <img src="https://varuna-biodiversite.org/wp-content/themes/varuna_theme/img/logo.svg" className="mr-20 h-40 sm:h-40" alt="Varuna Logo" />
-        <p className='text-sm mt-5'>You can sign up with your email and password or with Google</p>
+        <p className='text-sm mt-5'>Vous pouvez vous connecter avec votre mail et mot de passe ou avec Google</p>
         </div>
 
         {/* Right Side */}
