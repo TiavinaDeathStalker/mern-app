@@ -106,7 +106,7 @@ export default function DashProfile() {
           <TextInput type='password' id='password' placeholder='password' onChange={handleChange}/>
           <Button
           type='submit'
-          gradientDuoTone='purpleToBlue'
+          gradientDuoTone='tealToLime'
           outline
           disabled={loading}
         >
@@ -116,7 +116,7 @@ export default function DashProfile() {
           <Link to={'/create-post'}>
             <Button
               type='button'
-              gradientDuoTone='purpleToPink'
+              gradientDuoTone='tealToLime'
               className='w-full'
             >
               Créer une poste
