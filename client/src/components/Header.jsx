@@ -74,7 +74,7 @@ export default function Header() {
             ) : (
                 <Link to='/sign-in'>
                     <Button gradientDuoTone='tealToLime' outline>
-                        Sign In
+                        Se connecter
                     </Button>
                 </Link>
                 
@@ -84,17 +84,17 @@ export default function Header() {
         <Navbar.Collapse>
                 <Navbar.Link active={path === "/"} as={'div'}>
                     <Link to='/'>
-                        Home
+                        Acceuil
                     </Link>
                 </Navbar.Link>
                 <Navbar.Link active={path === "/about"} as={'div'}>
                     <Link to='/about'>
-                        About
+                        Visite Virtuelle
                     </Link>
                 </Navbar.Link>
                 <Navbar.Link active={path === "/project"} as={'div'}>
                     <Link to='/project'>
-                        Project
+                        Contact
                     </Link>
                 </Navbar.Link>
         </Navbar.Collapse>
