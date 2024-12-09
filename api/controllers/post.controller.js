@@ -2,7 +2,7 @@ import Post from '../models/post.models.js';
 import { errorHandler } from '../utils/error.js';
 export const create = async (req, res, next) => {
   if (!req.user.isAdmin) {
-    return next(errorHandler(403, "Vous n'etes pas autorisé a crée un poste"));
+    return next(errorHandler(403, "Vous n'êtes pas autorisé à créer une ressource"));
   }
   if (!req.body.title || !req.body.content) {
     return next(errorHandler(400, 'Tous les champs sont requis'));
@@ -67,11 +67,34 @@ export const getposts = async (req, res, next) => {
 
 export const deletepost = async (req, res, next) => {
   if (!req.user.isAdmin || req.user.id !== req.params.userId) {
-    return next(errorHandler(403, 'You are not allowed to delete this post'));
+    return next(errorHandler(403, "Vous n'êtes pas autorisé à supprimer cette ressource"));
   }
   try {
     await Post.findByIdAndDelete(req.params.postId);
-    res.status(200).json('The post has been deleted');
+    res.status(200).json('Le ressource a été supprimé');
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const updatepost = async (req, res, next) => {
+  if (!req.user.isAdmin || req.user.id !== req.params.userId) {
+    return next(errorHandler(403, "Vous n'êtes pas autorisé à éditer cette ressource"));
+  }
+  try {
+    const updatedPost = await Post.findByIdAndUpdate(
+      req.params.postId,
+      {
+        $set: {
+          title: req.body.title,
+          content: req.body.content,
+          category: req.body.category,
+          image: req.body.image,
+        },
+      },
+      { new: true }
+    );
+    res.status(200).json(updatedPost);
   } catch (error) {
     next(error);
   }
