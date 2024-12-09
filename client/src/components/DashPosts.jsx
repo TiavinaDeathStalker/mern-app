@@ -79,13 +79,13 @@ export default function DashPosts() {
         <>
           <Table hoverable className='shadow-md'>
             <Table.Head>
-              <Table.HeadCell>Date updated</Table.HeadCell>
-              <Table.HeadCell>Post image</Table.HeadCell>
-              <Table.HeadCell>Post title</Table.HeadCell>
-              <Table.HeadCell>Category</Table.HeadCell>
-              <Table.HeadCell>Delete</Table.HeadCell>
+              <Table.HeadCell>Date mise à jour</Table.HeadCell>
+              <Table.HeadCell>Image de la ressource</Table.HeadCell>
+              <Table.HeadCell>Titre de la ressource</Table.HeadCell>
+              <Table.HeadCell>Catégorie</Table.HeadCell>
+              <Table.HeadCell>Supprimer</Table.HeadCell>
               <Table.HeadCell>
-                <span>Edit</span>
+                <span>Editer</span>
               </Table.HeadCell>
             </Table.Head>
             {userPosts.map((post) => (
