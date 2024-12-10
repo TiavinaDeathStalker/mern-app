@@ -1,4 +1,5 @@
 import { Button } from 'flowbite-react';
+import { Link } from 'react-router-dom';
 export default function CallToAction() {
   return (
     <div className='flex flex-col sm:flex-row p-3 border border-teal-500 justify-center items-center rounded-tl-3xl rounded-br-3xl text-center'>
@@ -10,9 +11,9 @@ export default function CallToAction() {
                 Nous aimons recevoir vos messages. Contactez-nous et découvrez à quel point il est facile de trouver une réponse adaptée à vos attentes.
             </p>
             <Button gradientDuoTone='tealToLime' className='rounded-tl-xl rounded-bl-none'>
-                <a href="https://www.100jsprojects.com" target='_blank' rel='noopener noreferrer'>
+                <Link to="/project">
                     Contacter nous
-                </a>
+                </Link>
             </Button>
         </div>
         <div className="p-7 flex-1">
