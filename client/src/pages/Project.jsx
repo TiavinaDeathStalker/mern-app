@@ -1,6 +1,25 @@
-import React from 'react'
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Project() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_6g88c8l', 'template_jd3ewjg', form.current, {
+        publicKey: 'xeJJx9_6Cb4jkXNl6',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
   return (
     <>
       <section className="text-gray-600 body-font relative">
@@ -24,6 +43,7 @@ export default function Project() {
               Explorez le circuit d'Ambatolahy à travers notre visite virtuelle et découvrez la richesse de ce lieu unique.
               Si vous avez des questions ou souhaitez plus d'informations sur le circuit, n'hésitez pas à nous contacter.
             </p>
+            <form ref={form} onSubmit={sendEmail}>
             <div className="relative mb-4">
               <label htmlFor="email" className="leading-7 text-sm text-gray-600">Votre Email</label>
               <input
@@ -44,6 +64,7 @@ export default function Project() {
             <button className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
               Envoyer
             </button>
+            </form>
             <p className="text-xs text-gray-500 mt-3">
               Pour toute question concernant le circuit d'Ambatolahy ou pour organiser votre visite virtuelle, contactez-nous !
             </p>

@@ -7,6 +7,7 @@ export default function PostPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [post, setPost] = useState(null);
+
   useEffect(() => {
     const fetchPost = async () => {
       try {
@@ -28,8 +29,10 @@ export default function PostPage() {
         setLoading(false);
       }
     };
+
     fetchPost();
   }, [postSlug]);
+  
   if (loading)
     return (
       <div className='flex justify-center items-center min-h-screen'>

@@ -17,7 +17,7 @@ const postSchema = new mongoose.Schema(
     image: {
       type: String,
       default:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTia-QRwqDlV-poRCVRS0WNKIR_nmF4Mq80bg&s',
+        'https://longovezo.com/img/slide/fleur.jpg',
     },
     category: {
       type: String,
